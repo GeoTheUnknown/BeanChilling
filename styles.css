@@ -1,0 +1,257 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: auto;
+  margin-right: 10px;
+}
+
+header {
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a::before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: brown;
+}
+
+nav a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.first {
+  background-image: url('img/bg.png');
+  background-size: cover;
+  background-position: center;  
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.first-content {
+  text-align: center;
+}
+
+.first h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.first p {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.first-button {
+  display: inline-block;
+  background-color: #a27250;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.first-button:hover {
+  background-color: #6f4e37;
+}
+
+/* Product section */
+.featured-menu {
+  padding: 40px;
+}
+
+.featured-menu h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  margin-left: 42%;
+}
+
+.menu-grid {
+  margin: 0 200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+.menu {
+  background-color: #f5d1ae;
+  text-align: center;
+  padding-bottom: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+
+.menu:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.menu img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.menu h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.menu p {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.featured-menu-button {
+  display: inline-block;
+  background-color: #a27250;
+  color: #fff;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.featured-menu-button:hover {
+  background-color: #6f4e37;
+}
+
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Mini-menu */
+#mini-menu {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: calc(100% / 5);
+  margin: -15px 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  transition: all .3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.item:hover{
+  transform: translateY(-10px);
+}
+
+.item > .name {
+  background-color: #ddd;
+  color: black;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.item > h2 {
+  margin-top: 15px;
+}
+
+.item > p {
+  margin: 15px 0;
+}
+
+.mini-menu-desc {
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+.item > button {
+  position: absolute;
+  bottom: 10px;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.item > button:hover {
+  background-color: brown;
+  transition: background-color 1s;
+}
