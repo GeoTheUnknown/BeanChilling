@@ -1,61 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Bean Chilling</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="img/orig.jpg">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Chilling</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-        <img src="img/heading_logo.png">
-      </div>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#section-one">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <section class="first">
-    <div class="first-content">
-      <h1>Welcome to Bean Chilling</h1>
-      <p>Indulge in our refreshing iced coffee creations</p>
-      <a href="menu.html" class="first-button">View Menu</a>
+    <!-- Header Starting Line  -->
+    <div class="header" id="home">
+        <nav id="navbar">
+            <a href="#home" class="logo"><img src="img/heading-logo.png"> <span>.</span></a>
+            <div class="links" id="nav">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="fas fa-bars" id="menu-btn" onclick="openmenu()"></div>
+            <div class="fa-solid fa-xmark" id="close" onclick="closemenu()"></div>
+        </nav>
+        <div class="content">
+            <h1>Welcome to Bean Chilling</h1>
+            <h3>Indulge in our refreshing iced coffee creations</h3>
+            <button class="content-btn">Buy Now</button>
+        </div>
     </div>
-  </section>
-  
-  <section class="featured-menu" id="section-one">
-    <h2>Featured Menu</h2>
-    <div class="menu-grid">
-      <div class="menu">
-        <img src="img/p1.jpg" alt="Picture of Product">
-        <h3>Coffee Jelly</h3>
-        <p>Indulge in the perfect blend of smooth coffee and tantalizing jelly, a heavenly treat to savor with every delightful spoonful.</p>
-        <a href="#" class="featured-menu-button">Buy Now</a>
-      </div>
-      <div class="menu">
-        <img src="img/p2.jpg" alt="Picture of Product">
-        <h3>Iced Black Coffee</h3>
-        <p>A refreshing and simple iced coffee made by steeping coarsely ground coffee beans in cold water for an extended period, resulting in a smooth and less acidic flavor.</p>
-        <a href="#" class="featured-menu-button">Buy Now</a>
-      </div>
-      <div class="menu">
-        <img src="img/p3.jpg" alt="Picture of Product">
-        <h3>Iced Caramel Macchiato</h3>
-        <p>A popular iced coffee choice made with a layered combination of espresso, milk, vanilla syrup, and caramel sauce.</p>
-        <a href="#" class="featured-menu-button">Buy Now</a>
-      </div>
-    </div>
-  </section>
-  
-  <footer>
-    <p>&copy; 2023 Bing Chilling. All rights reserved.</p>
-  </footer>
+    <!-- Header Ending Line -->
+
+    <!-- Menu Section Starting Line -->
+    <section class="menu" id="menu">
+        <h1 class="heading">Our <span>Menu</span></h1>
+        <p class="heading-description">We deliver our products free (Only in Cavite) door to door 24/7</p>
+        <div class="container">
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="img/menu-1.jpg" alt="">
+                </div>
+                <div class="menu-content">
+                    <h3>Coffee Jelly</h3>
+                    <p>Indulge in the perfect blend of smooth coffee and tantalizing jelly, a heavenly treat to savor with every delightful spoonful.</p>
+                    <button class="btn" style="color: black;">Buy Now</button>
+                </div>
+            </div>
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="img/menu-2.jpg" alt="">
+                </div>
+                <div class="menu-content">
+                    <h3>Iced Black Coffee</h3>
+                    <p>A refreshing and simple iced coffee made by steeping coarsely ground coffee beans in cold water for an extended period, resulting in a smooth and less acidic flavor.</p>
+                    <button class="btn" style="color: black;">Buy Now</button>
+                </div>
+            </div>
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="img/menu-3.jpg" alt="">
+                </div>
+                <div class="menu-content">
+                    <h3>Iced Caramel Macchiato</h3>
+                    <p>A popular iced coffee choice made with a layered combination of espresso, milk, vanilla syrup, and caramel sauce.</p>
+                    <button class="btn" style="color: black;">Buy Now</button>
+                </div>
+            </div>
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="img/menu-4.png" alt="">
+                </div>
+                <div class="menu-content">
+                    <h3>Product name</h3>
+                    <p>Product Description</p>
+                </div>
+            </div>
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="img/menu-5.png" alt="">
+                </div>
+                <div class="menu-content">
+                    <h3>Product name</h3>
+                    <p>Product Description</p>
+                </div>
+            </div>
+            <div class="menu-box">
+                <div class="menu-img">
+                    <img src="img/menu-6.png" alt="">
+                </div>
+                <div class="menu-content">
+                    <h3>Product name</h3>
+                    <p>Product Description</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu Section Ending Line -->
+
+    <!-- Team Section Starting Line -->
+    <section class="team" id="team">
+        <h1 class="heading"> Our <span>Team</span></h1>
+        <p class="heading-description"> This is the Bean Chilling Team</p>
+        <div class="container">
+            <div class="team-box">
+                <div class="team-img">
+                    <img src="img/pic-2.png" alt="">
+                </div>
+                <div class="team-content">
+                    <h3>Content Manager</h3>
+                    <p>Content Manager</p>
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-box">
+                <div class="team-img">
+                    <img src="img/pic-3.png" alt="">
+                </div>
+                <div class="team-content">
+                    <h3>Lead Developer</h3>
+                    <p>Lead Developer</p>
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-box">
+                <div class="team-img">
+                    <img src="img/pic-2.png" alt="">
+                </div>
+                <div class="team-content">
+                    <h3>Market Manager</h3>
+                    <p>Market Manager</p>
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End line-->
+
+    <!-- Contact Section  -->
+    <section class="contact" id="contact">
+        <h1 class="heading">Contact <span>Us</span></h1>
+        <p class="heading-description">We are always here for you...</p>
+        <div class="container">
+            <div class="contact-box">
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <h2>Email address <br> <span>Send email anytime</span></h2>
+                </div>
+                <div>
+                    <p>beanchilling@gmail.com</p>
+                    <i class="fa-solid fa-right-long"></i>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h2>Address <br> <span>Find Us</span></h2>
+                </div>
+                <div>
+                    <p>Tanza, Cavite</p>
+                    <i class="fa-solid fa-right-long"></i>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div>
+                    <i class="fa-solid fa-phone"></i>
+                    <h2>Call Us <br> <span>Call us anytime</span></h2>
+                </div>
+                <div>
+                    <p>09123456789</p>
+                    <i class="fa-solid fa-right-long"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section Ending -->
+
+    <!-- Footer Section Starting Line -->
+    <section class="footer">
+        <div class="container">
+            <div class="footer-box">
+                <h3>about us </h3>
+                <p>Short Description</p>
+                <p>&copy; 2023 Bean Chilling. All rights reserved.</p>
+
+            </div>
+            <div class="footer-box">
+                <h3>Newsletter</h3>
+                <p>Stay update with our latests</p>
+                <form>
+                    <input type="email" name="email" placeholder="example@gmail.com">
+                    <button type="submit"><i class="fa-solid fa-right-long"></i></button>
+                </form>
+            </div>
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <p>Connect With Us On:</p>
+                <div>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section Ending Line -->
+
+    <script src="script.js"></script>
 </body>
+  
 </html>
