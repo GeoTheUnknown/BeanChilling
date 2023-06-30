@@ -14,13 +14,14 @@
     <!-- Header Starting Line  -->
     <div class="header" id="home">
         <nav id="navbar">
-            <a href="#home" class="logo"><img src="img/heading-logo.png"></a>
+            <a href="#home" class="logo"><img src="img/logo.png"></a>
             <div class="links" id="nav">
                 <a href="#home">Home</a>
                 <a href="#menu">Menu</a>
                 <a href="#about">About</a>
                 <a href="#team">Team</a>
                 <a href="#contact">Contact</a>
+                <a href="#menu" onclick="toggleCart()"><i class="fas fa-shopping-cart" style="color: #a27250;"></i></a>
             </div>
             <div class="fas fa-bars" id="menu-btn" onclick="openmenu()"></div>
             <div class="fa-solid fa-xmark" id="close" onclick="closemenu()"></div>
@@ -143,7 +144,7 @@
                 </ul>
                 <p>Whether you're a coffee aficionado or simply looking to satisfy your sweet tooth, our Coffee Jelly is a must-try dessert that will awaken your senses and leave you wanting more. Join us and embark on a journey of flavors with this delightful creation that combines the best of coffee and dessert.</p>
                 <span class="price">₱50.00</span>
-                <button>Buy now</button>
+                <button onclick="addToCart(1)">Buy now</button>
             </div>
         </div>
     </div>
@@ -165,7 +166,7 @@
                 </ul>
                 <p>Whether you're a coffee aficionado or simply looking to satisfy your sweet tooth, our Coffee Jelly is a must-try dessert that will awaken your senses and leave you wanting more. Join us and embark on a journey of flavors with this delightful creation that combines the best of coffee and dessert.</p>
                 <span class="price">₱50.00</span>
-                <button>Buy now</button>
+                <button onclick="addToCart(2)">Buy now</button>
             </div>
         </div>
     </div>
@@ -187,7 +188,7 @@
                 </ul>
                 <p>Join us for an unforgettable coffee adventure with our Iced Caramel Macchiato. Its harmonious blend of espresso, milk, and caramel is a testament to the artistry of coffee making. Whether you're seeking a refreshing pick-me-up or a decadent treat, this beverage is sure to satisfy your cravings and provide a moment of pure indulgence.</p>
                 <span class="price">₱65.00</span>
-                <button>Buy now</button>
+                <button onclick="addToCart(3)">Buy now</button>
             </div>
         </div>
     </div>
@@ -209,7 +210,7 @@
                 </ul>
                 <p>Join us and experience the artistry of our Iced Cappuccino. This cool and creamy beverage is a refreshing take on the beloved classic, designed to provide you with the perfect combination of bold espresso, velvety milk, and frothy foam. Whether you're seeking a morning pick-me-up or a satisfying treat throughout the day, our Iced Cappuccino is sure to satisfy your cravings and leave you feeling refreshed and invigorated.</p>
                 <span class="price">₱65.00</span>
-                <button>Buy now</button>
+                <button onclick="addToCart(4)">Buy now</button>
             </div>
         </div>
     </div>
@@ -231,7 +232,7 @@
                 </ul>
                 <p>Our Iced Latte is the epitome of coffee elegance and refreshment. Its creamy texture, combined with the boldness of espresso and the coolness of ice, make it an ideal choice for coffee lovers seeking a delightful escape. Join us and savor the artistry of our Iced Latte, where every sip is a moment of pure coffee bliss.</p>
                 <span class="price">₱65.00</span>
-                <button>Buy now</button>
+                <button onclick="addToCart(5)">Buy now</button>
             </div>
         </div>
     </div>
@@ -254,7 +255,7 @@
                 </ul>
                 <p>Our Iced Mocha is a captivating blend of coffee and chocolate, offering a refreshing and indulgent experience in every sip. Whether you're a coffee lover, a chocolate enthusiast, or simply seeking a delicious treat, our Iced Mocha is sure to delight your taste buds and provide a moment of pure satisfaction. Join us and embark on a journey of flavor with this irresistible beverage that combines the best of coffee and chocolate in a chilled delight.</p>
                 <span class="price">₱75.00</span>
-                <button>Buy now</button>
+                <button onclick="addToCart(6)">Buy now</button>
             </div>
         </div>
     </div>
@@ -276,11 +277,26 @@
                 </ul>
                 <p>Join us and discover the refreshing pleasure of our Iced Coffee with Milk. This cool and creamy beverage is the epitome of coffee enjoyment, combining the boldness of coffee with the smoothness of milk in a harmonious union. Whether you seek a morning pick-me-up or a rejuvenating treat throughout the day, our Iced Coffee with Milk is the perfect companion. Immerse yourself in the satisfying world of coffee and milk, and experience a moment of pure refreshment.</p>
                 <span class="price">₱55.00</span>
-                <button>Buy now</button>
+                <button onclick="addToCart(7)">Buy now</button>
             </div>
         </div>
     </div>
     <!-- Menu-description Section Ending Line -->
+
+    <!-- Cart Section Starting Line -->
+    <div id="cart" class="cart-container">
+      <h2>Cart</h2>
+      <button class="cart-close-btn" onclick="toggleCart()">X</button>
+      <div id="cart-items"></div>
+      <div class="payment-methods">
+        <label class="payment-label">Payment Method:</label>
+        <input type="radio" name="payment" value="cash"> Cash on Delivery
+        <input type="radio" name="payment" value="credit"> Credit Card
+      </div>
+      <div id="total-price" class="total-price"></div>
+      <button class="buy-now-btn">Buy Now</button>
+    </div>
+    <!-- Cart Section Endling Line -->
 
     <!-- Team Section Starting Line -->
     <section class="team" id="team">
