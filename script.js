@@ -92,3 +92,138 @@ window.addEventListener('click', (event) => {
     }
   }
 });
+
+
+const products = [
+  { id: 1, name: 'Item 1', price: 10, image: 'menu-1.jpg' },
+  { id: 2, name: 'Item 2', price: 15, image: 'menu-2.jpg' },
+  { id: 3, name: 'Item 3', price: 20, image: 'menu-3.jpg' },
+  { id: 4, name: 'Item 4', price: 25, image: 'menu-4.jpg' },
+  { id: 5, name: 'Item 5', price: 30, image: 'menu-5.jpg' },
+  { id: 6, name: 'Item 6', price: 35, image: 'menu-6.jpg' },
+  { id: 7, name: 'Item 7', price: 40, image: 'menu-7.jpg' }
+];
+
+const cartItems = [];
+
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  if (product) {
+    const existingCartItem = cartItems.find(item => item.id === product.id);
+    if (existingCartItem) {
+      existingCartItem.quantity++;
+    } else {
+      cartItems.push({ ...product, quantity: 1 });
+    }
+  }
+  renderCartItems();
+  calculateTotalPrice();
+}
+
+function toggleCart() {
+  const cart = document.getElementById('cart');
+  cart.classList.toggle('open');
+
+  if (cart.classList.contains('open')) {
+    renderCartItems();
+    calculateTotalPrice();
+  } else {
+    clearCartItems();
+    clearTotalPrice();
+  }
+}
+
+function renderCartItems() {
+  const cartItemsContainer = document.getElementById('cart-items');
+  clearCartItems();
+  cartItems.forEach(item => {
+    const cartItemElement = document.createElement('div');
+    cartItemElement.classList.add('cart-item');
+
+    const itemImage = document.createElement('img');
+    itemImage.src = item.image;
+    cartItemElement.appendChild(itemImage);
+
+    const itemDetailsElement = document.createElement('div');
+    itemDetailsElement.classList.add('cart-item-details');
+
+    const itemNameElement = document.createElement('div');
+    itemNameElement.classList.add('cart-item-name');
+    itemNameElement.innerText = item.name;
+    itemDetailsElement.appendChild(itemNameElement);
+
+    const itemPriceElement = document.createElement('div');
+    itemPriceElement.classList.add('cart-item-price');
+    itemPriceElement.innerText = `₱${(item.price * item.quantity).toFixed(2)}`;
+    itemDetailsElement.appendChild(itemPriceElement);
+
+    const quantityContainer = document.createElement('div');
+    quantityContainer.classList.add('cart-item-quantity');
+
+    const quantityLabel = document.createElement('label');
+    quantityLabel.classList.add('quantity-label');
+    quantityLabel.innerText = 'Quantity:';
+    quantityContainer.appendChild(quantityLabel);
+
+    const minusBtn = document.createElement('button');
+    minusBtn.classList.add('quantity-btn');
+    minusBtn.innerText = '-';
+    minusBtn.addEventListener('click', () => {
+      if (item.quantity > 0) {
+        item.quantity--;
+        renderCartItems();
+        calculateTotalPrice();
+      }
+    });
+    quantityContainer.appendChild(minusBtn);
+
+    const quantityValue = document.createElement('span');
+    quantityValue.innerText = item.quantity;
+    quantityContainer.appendChild(quantityValue);
+
+    const plusBtn = document.createElement('button');
+    plusBtn.classList.add('quantity-btn');
+    plusBtn.innerText = '+';
+    plusBtn.addEventListener('click', () => {
+      item.quantity++;
+      renderCartItems();
+      calculateTotalPrice();
+    });
+    quantityContainer.appendChild(plusBtn);
+
+    itemDetailsElement.appendChild(quantityContainer);
+
+    cartItemElement.appendChild(itemDetailsElement);
+
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('close-btn');
+    removeBtn.innerText = 'X';
+    removeBtn.addEventListener('click', () => {
+      const itemIndex = cartItems.indexOf(item);
+      if (itemIndex > -1) {
+        cartItems.splice(itemIndex, 1);
+        renderCartItems();
+        calculateTotalPrice();
+      }
+    });
+    cartItemElement.appendChild(removeBtn);
+
+    cartItemsContainer.appendChild(cartItemElement);
+  });
+}
+
+  function clearCartItems() {
+  const cartItemsContainer = document.getElementById('cart-items');
+  cartItemsContainer.innerHTML = '';
+}
+
+function calculateTotalPrice() {
+  const totalPriceElement = document.getElementById('total-price');
+  const totalPrice = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  totalPriceElement.innerText = `Total Price: ₱${totalPrice.toFixed(2)}`;
+}
+
+function clearTotalPrice() {
+  const totalPriceElement = document.getElementById('total-price');
+  totalPriceElement.innerText = '';
+}
