@@ -1,19 +1,18 @@
-/* google font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-/* google font */
 
 /* Colors */
 :root {
     --font-heading: #a27250;
-    --para-font: #f5d1ae;
     --black: #222222;
     --bg: rgba(162, 114, 80);
     --white: #fff;
+    --bean: #f4b183;
+    --chilling: #9dc3e6;
+    --border:.1rem solid rgba(255,255,255,.3);
 }
 /* Colors */
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,30 +31,28 @@ html {
 }
 
 section {
-    padding: 8rem 7%;
+    padding: 8rem 5%;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 7%;
+    padding: 1.5rem 7%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10000;
-}
-
-.logo {
-    font-weight: 700;
-    border-radius: 10px;
-    color: var(--white);
+    z-index: 1000;
 }
 
 .logo img {
     width: 15%;
     height: 15%;
+}
+
+.links {
+    margin-right: 20%;
 }
 
 nav .links a {
@@ -87,6 +84,15 @@ nav #menu-btn, nav #close {
     font-size: 2.5rem;
     cursor: pointer;
     display: none;
+}
+
+nav #cart-btn {
+    color: #a27250;
+    font-size: 2.5rem;
+    cursor: pointer;
+    width: auto;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .header {
@@ -165,11 +171,9 @@ nav #menu-btn, nav #close {
     transform: translate(0px, -3px);
 }
 
-
 .nav-change {
     background: rgba(0, 0, 0, 0.9);
 }
-
 
 .heading {
     font-size: 5rem;
@@ -187,8 +191,45 @@ nav #menu-btn, nav #close {
     font-weight: 300;
 }
 
+/* About Section Start */
+.about .row{
+    display: flex;
+    align-items: center;
+    background: var(--font-heading);
+    flex-wrap: wrap;
+    border-radius: 2%;
+}
 
-/* Menu Section Starting Line */
+.about .row .image{
+    margin-left: 1%;
+    flex: 1 1 45rem;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.about .row .image img{
+    width: 100%;
+    padding: 10%;
+}
+.about .row .content{
+    flex:1 1 45rem;
+    padding: 2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+/* About Section End */
+
+/* Menu Section Start */
 .menu .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
@@ -201,7 +242,8 @@ nav #menu-btn, nav #close {
     background: var(--white);
     height: auto;
     cursor: pointer;
-    box-shadow: 3px 3px 10px rgba(179, 179, 179, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
     padding-bottom: 3rem;
     border-radius: 10px;
 }
@@ -216,7 +258,7 @@ nav #menu-btn, nav #close {
 }
 
 .menu .container .menu-box .menu-content h3 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     padding: 1.3rem 0;
 }
 
@@ -229,15 +271,7 @@ nav #menu-btn, nav #close {
 
 .menu .container .menu-box:hover {
     transform: translateY(-1rem);
-}
-
-.menu-box {
-    opacity: 0;
-    transition: opacity 0.9s;
-}
-
-.btns {
-    display: flex;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
 .menu-btn{
@@ -245,7 +279,7 @@ nav #menu-btn, nav #close {
     padding: 10px 20px;
     background-color: #a27250;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
@@ -255,9 +289,10 @@ nav #menu-btn, nav #close {
 .menu-btn:hover {
     background-color: #664a38;
 }
-/* Menu Section Ending Line */
 
-/* Menu-description Section Starting Line */
+/* Menu Section End */
+
+/* Menu-description Section Start */
 .menu-description {
     display: none;
     position: fixed;
@@ -284,15 +319,18 @@ nav #menu-btn, nav #close {
 }
 
 .menu-description p {
-    margin: 0;
+    margin left: 5%;
 }
 
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 5%;
+    right: 5%;
+    margin-left: 95%;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 2.5rem;
+    background-color: white;
+    color: var(--black);
 }
 
 .menu-information {
@@ -301,8 +339,8 @@ nav #menu-btn, nav #close {
 }
 
 .menu-image {
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     margin-right: 20px;
     border-radius: 10px;
 }
@@ -344,23 +382,17 @@ nav #menu-btn, nav #close {
 .menu-information button:hover {
     background-color: #45a049;
 }
-/* Menu-description Section Ending Line */
-.add-to-cart-btn {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-    
+/* Menu-description Section End */
+
+/* Cart Section Start */
 .cart-container {
     position: fixed;
-    top: 15%;
+    top: 12%;
     right: 50px;
-    width: 300px;
+    width: 25%;
     background-color: #fff;
     border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 10px;
     opacity: 0;
     transform: translateY(-20px);
@@ -372,7 +404,7 @@ nav #menu-btn, nav #close {
     opacity: 1;
     transform: translateY(0);
 }
-    
+
 .cart-container h2 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -385,8 +417,39 @@ nav #menu-btn, nav #close {
     align-items: center;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
+    position: relative;
+    opacity: 0;
+    animation: fade-in 0.5s ease forwards;
 }
-    
+
+.cart-item:first-child {
+      animation-delay: 0.2s;
+}
+
+.cart-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.cart-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.cart-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.cart-item:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.cart-item:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.cart-item:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
 .cart-item img {
     width: 60px;
     height: 60px;
@@ -416,7 +479,7 @@ nav #menu-btn, nav #close {
 }
 
 .quantity-label {
-    margin-right: 10px;
+    margin-right: 5px;
     color: #555;
 }
 
@@ -429,8 +492,12 @@ nav #menu-btn, nav #close {
     margin-right: 5px;
 }
 
+.quantity-btn:first-child {
+    margin-right: 5px;
+}
+
 .buy-now-btn {
-    background-color: #4caf50;
+    background-color: var(--para-font);
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -464,8 +531,10 @@ nav #menu-btn, nav #close {
     background-color: transparent;
     cursor: pointer;
 }
+/* Cart Section End */
 
-/* Team Section Starting Line */
+
+/* Team Section Start */
 .team .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -540,62 +609,57 @@ nav #menu-btn, nav #close {
 .team .container .team-box:hover .team-content {
     transform: translateY(-1rem);
 }
-/* Team Section Ending Line */
+/* Team Section End */
 
-/* Contact Section Starting Line */
-.contact .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 2rem;
-    padding: 2.5rem 0;
+/* Contact Section Start */
 }
-
-.contact .container .contact-box {
-    border: 0.2rem solid var(--bg);
-    border-radius: 1rem;
-    padding: 2rem;
-    cursor: pointer;
+.contact{
+    background: var(--black);
 }
-
-.contact .container .contact-box div {
+.contact .row{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1.3rem 0;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1.5rem;
 }
-
-.contact .container .contact-box div i {
-    width: 4rem;
-    height: 4rem;
-    background: var(--bg);
-    color: var(--white);
+.contact .row .form-c h3{
+    font-size: 2.5rem;
     text-align: center;
-    font-size: 1.3rem;
-    line-height: 4rem;
-    border-radius: 100%;
 }
-
-.contact .container .contact-box div h2 {
-    font-size: 1.8rem;
-
-}
-
-.contact .container .contact-box div h2 span {
-    font-weight: 300;
-
-}
-
-.contact .container .contact-box div p {
+.contact .row .form-c input{
+    background: #fff;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--font-heading);
+    padding: 0.9rem 0.8rem;
+    height: 2.3rem; width: 90%;
+    margin: 0.5rem 0;
+    color: #000;
     font-size: 1.5rem;
 }
-
-.contact .container .contact-box:hover {
-    background: #f5d1ae;
-    color: var(--white);
+.contact .row .form-c input[type="submit"]{
+    background: var(--font-heading);
+    cursor: pointer;
+    font-size: 1.6rem;
+    height: 3rem; width: 90%;
+    margin-bottom: 2rem;
+    color: #fff;
 }
-/* Contact Section Ending Line */
+.contact .row .form-c input[type="submit"]:hover{
+    background: #fff;
+    color: var(--font-heading);
+}
+.contact .row textarea{
+    background: #fff;
+    border: 0.1rem solid var(--font-heading);
+    height: 12rem; width: 90%;
+    padding: 0.5rem 1rem; 
+    font-size: 1.5rem;
+}
+/* Contact Section End */
 
-/* Footer Section Starting Line */
+/* Footer Section Start */
 .footer {
     width: 100%;
     height: auto;
@@ -656,7 +720,7 @@ nav #menu-btn, nav #close {
     text-align: center;
     background: var(--bg);
 }
-/* Footer Section Ending Line */
+/* Footer Section End */
 
 @media only screen and (max-width: 991px) {
     html {
