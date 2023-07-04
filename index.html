@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 </head>
 <body>
-    <!-- Header Starting Line  -->
+    <!-- Header Start -->
     <div class="header" id="home">
         <nav id="navbar">
             <a href="#home" class="logo"><img src="img/logo.png"></a>
             <div class="links" id="nav">
-                <a href="#home">Home</a>
+                <a href="#home" class="nav-btn">Home</a>
                 <a href="#menu">Menu</a>
                 <a href="#about">About</a>
                 <a href="#team">Team</a>
                 <a href="#contact">Contact</a>
-                <a href="#menu" onclick="toggleCart()"><i class="fas fa-shopping-cart" style="color: #a27250;"></i></a>
             </div>
+            <div class="fas fa-shopping-cart" id="cart-btn" onclick="toggleCart()"></div>
             <div class="fas fa-bars" id="menu-btn" onclick="openmenu()"></div>
             <div class="fa-solid fa-xmark" id="close" onclick="closemenu()"></div>
         </nav>
@@ -32,9 +32,28 @@
             <button class="content-btn"><a href="#menu">View Menu</a></button>
         </div>
     </div>
-    <!-- Header Ending Line -->
+    <!-- Header End -->
 
-    <!-- Menu Section Starting Line -->
+    <!-- About Section Start -->
+    <section class="about" id="about">
+        <h1 class="heading"> <span>about</span> us </h1>
+        <div class="row">
+            <div class="image">
+                <img src="img/logo.png">
+            </div>
+            <div class="content">
+                <p>Welcome to Bean Chilling, your ultimate destination for delightful ice-cold coffee creations! At our cozy little ice coffee shop, we believe that every sip should be an extraordinary experience. Our passion for coffee and the desire to bring joy to your taste buds drive us every day.</p>
+                <p>At Bean Chilling, we carefully source the finest coffee beans from around the world, ensuring a rich and robust flavor in every cup. Our expert baristas skillfully craft each iced coffee with precision and love, ensuring a perfect balance of flavors that will keep you coming back for more.</p>
+                <p>Whether you're a classic iced coffee lover or looking to explore exciting coffee concoctions, we've got you covered! From refreshing iced lattes to indulgent iced mochas, our menu caters to every coffee enthusiast's cravings.</p>
+                <p>We take pride in creating a warm and welcoming ambiance, providing the perfect spot to chill, chat with friends, or simply enjoy a moment of tranquility while savoring your favorite ice-cold brew.</p>
+                <p>So, come on over and experience the chill at Bean Chilling. Our dedicated team is here to serve you the finest iced coffee creations that will tantalize your taste buds and leave you with a smile. Cheers to great coffee and good times!
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Menu Section Start -->
     <section class="menu" id="menu">
         <h1 class="heading">Our <span>Menu</span></h1>
         <p class="heading-description">We deliver our products free (Only in Cavite) door to door 24/7</p>
@@ -47,7 +66,7 @@
                     <h3>Coffee Jelly</h3>
                     <p>Product Description</p>
                     <div class="btns">
-                        <button class="menu-btn">Buy now</button>
+                        <button class="menu-btn" onclick="addToCart(1)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                     </div>
                 </div>
@@ -60,7 +79,7 @@
                     <h3>Iced Black Coffee</h3>
                     <p>Product Description</p>
                     <div class="btns">
-                        <button class="menu-btn">Buy now</button>
+                        <button class="menu-btn" onclick="addToCart(2)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
 
                     </div>
@@ -71,9 +90,9 @@
                     <img src="img/menu-3.jpg">
                 </div>
                 <div class="menu-content">
-                    <h3 style="font-size: 24px;">Iced Caramel Macchiato</h3>
+                    <h3 style="font-size: 22px;">Iced Caramel Macchiato</h3>
                     <p>Product Description</p>
-                        <button class="menu-btn">Buy now</button>
+                        <button class="menu-btn" onclick="addToCart(3)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
             </div>
@@ -84,7 +103,7 @@
                 <div class="menu-content">
                     <h3>Iced Cappuccino</h3>
                     <p>Product Description</p>
-                        <button class="menu-btn">Buy now</button>
+                        <button class="menu-btn" onclick="addToCart(4)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
             </div>
@@ -95,7 +114,7 @@
                 <div class="menu-content">
                     <h3>Iced Latte</h3>
                     <p>Product Description</p>
-                        <button class="menu-btn">Buy now</button>
+                        <button class="menu-btn" onclick="addToCart(5)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
             </div>
@@ -106,7 +125,7 @@
                 <div class="menu-content">
                     <h3>Iced Mocha</h3>
                     <p>Product Description</p>
-                        <button class="menu-btn">Buy now</button>
+                        <button class="menu-btn" onclick="addToCart(6)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
             </div>
@@ -117,16 +136,16 @@
                 <div class="menu-content">
                     <h3>Iced Coffee with Milk</h3>
                     <p>Product Description</p>
-                        <button class="menu-btn">Buy now</button>
+                        <button class="menu-btn" onclick="addToCart(7)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
             </div>
 
         </div>
     </section>
-    <!-- Menu Section Ending Line -->
+    <!-- Menu Section End -->
 
-    <!-- Menu-description Section Starting Line -->
+    <!-- Menu-description Section Start -->
     <div class="menu-description">
         <span class="close-btn">X</span>
         <div class="menu-information">
@@ -281,24 +300,25 @@
             </div>
         </div>
     </div>
-    <!-- Menu-description Section Ending Line -->
+    <!-- Menu-description Section End -->
 
-    <!-- Cart Section Starting Line -->
+    <!-- Cart Section Start -->
     <div id="cart" class="cart-container">
       <h2>Cart</h2>
       <button class="cart-close-btn" onclick="toggleCart()">X</button>
       <div id="cart-items"></div>
       <div class="payment-methods">
         <label class="payment-label">Payment Method:</label>
+        <br>
         <input type="radio" name="payment" value="cash"> Cash on Delivery
-        <input type="radio" name="payment" value="credit"> Credit Card
+        <input type="radio" name="payment" value="credit"> Online payment
       </div>
       <div id="total-price" class="total-price"></div>
       <button class="buy-now-btn">Buy Now</button>
     </div>
-    <!-- Cart Section Endling Line -->
+    <!-- Cart Section End -->
 
-    <!-- Team Section Starting Line -->
+    <!-- Team Section Start -->
     <section class="team" id="team">
         <h1 class="heading"> Our <span>Team</span></h1>
         <p class="heading-description"> This is the Bean Chilling Team</p>
@@ -347,48 +367,30 @@
             </div>
         </div>
     </section>
-    <!-- Team Section End line-->
+    <!-- Team Section End -->
 
-    <!-- Contact Section  -->
+    <!-- Contact Section Start  -->
     <section class="contact" id="contact">
-        <h1 class="heading">Contact <span>Us</span></h1>
-        <p class="heading-description">We are always here for you...</p>
-        <div class="container">
-            <div class="contact-box">
-                <div>
-                    <i class="fa-solid fa-envelope"></i>
-                    <h2>Email address <br> <span>Send email anytime</span></h2>
-                </div>
-                <div>
-                    <p>beanchilling@gmail.com</p>
-                    <i class="fa-solid fa-right-long"></i>
-                </div>
+        <h1 class="heading">contact</h1>
+        <div class="row">
+            <div class="ifarm">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3158.0889994053914!2d120.84100153937658!3d14.330591103438147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDE5JzUxLjUiTiAxMjDCsDUwJzMxLjkiRQ!5e0!3m2!1sen!2sph!4v1688494048948!5m2!1sen!2sph" width="550" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="contact-box">
-                <div>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h2>Address <br> <span>Find Us</span></h2>
-                </div>
-                <div>
-                    <p>Tanza, Cavite</p>
-                    <i class="fa-solid fa-right-long"></i>
-                </div>
-            </div>
-            <div class="contact-box">
-                <div>
-                    <i class="fa-solid fa-phone"></i>
-                    <h2>Call Us <br> <span>Call us anytime</span></h2>
-                </div>
-                <div>
-                    <p>09123456789</p>
-                    <i class="fa-solid fa-right-long"></i>
-                </div>
+            <div class="form-c">
+                <form action="">
+                    <h3>contact us</h3>
+                    <input type="text" placeholder="enter your name .....">
+                    <input type="email" placeholder="enter your email .....">
+                    <input type="number" placeholder="enter your phone .....">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <input type="submit" value="send messag">
+                </form>
             </div>
         </div>
     </section>
-    <!-- Contact Section Ending -->
+    <!-- Contact Section End -->
 
-    <!-- Footer Section Starting Line -->
+    <!-- Footer Section Start -->
     <section class="footer">
         <div class="container">
             <div class="footer-box">
@@ -417,7 +419,7 @@
             </div>
         </div>
     </section>
-    <!-- Footer Section Ending Line -->
+    <!-- Footer Section End -->
 
     <script src="script.js"></script>
 </body>
