@@ -27,39 +27,6 @@ function change() {
 
 window.addEventListener("scroll", change);
 
-//menu-box
-window.addEventListener('scroll', debounce(checkVisibleElements, 100));
-
-function debounce(func, delay) {
-  let timeoutId;
-  return function () {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(func, delay);
-  };
-}
-
-function checkVisibleElements() {
-  const gridItems = document.querySelectorAll('.menu-box');
-  gridItems.forEach(item => {
-    if (isElementInViewport(item)) {
-      item.style.opacity = 1;
-    } else {
-      item.style.opacity = 0;
-    }
-  });
-}
-
-function isElementInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-
 // Popup window
 const showBtns = document.getElementsByClassName('show-description-btn');
 const descriptions = document.getElementsByClassName('menu-description');
@@ -95,13 +62,13 @@ window.addEventListener('click', (event) => {
 
 
 const products = [
-  { id: 1, name: 'Item 1', price: 10, image: 'menu-1.jpg' },
-  { id: 2, name: 'Item 2', price: 15, image: 'menu-2.jpg' },
-  { id: 3, name: 'Item 3', price: 20, image: 'menu-3.jpg' },
-  { id: 4, name: 'Item 4', price: 25, image: 'menu-4.jpg' },
-  { id: 5, name: 'Item 5', price: 30, image: 'menu-5.jpg' },
-  { id: 6, name: 'Item 6', price: 35, image: 'menu-6.jpg' },
-  { id: 7, name: 'Item 7', price: 40, image: 'menu-7.jpg' }
+  { id: 1, name: 'Coffee Jelly', price: 10, image: 'img/menu-1.jpg' },
+  { id: 2, name: 'Iced Black Coffee', price: 15, image: 'img/menu-2.jpg' },
+  { id: 3, name: 'Iced Caramel Macchiato', price: 20, image: 'img/menu-3.jpg' },
+  { id: 4, name: 'Iced Cappuccino', price: 25, image: 'img/menu-4.jpg' },
+  { id: 5, name: 'Iced Latte', price: 30, image: 'img/menu-5.jpg' },
+  { id: 6, name: 'Iced Mocha', price: 35, image: 'img/menu-6.jpg' },
+  { id: 7, name: 'Iced Coffee with Milk', price: 40, image: 'img/menu-7.jpg' }
 ];
 
 const cartItems = [];
