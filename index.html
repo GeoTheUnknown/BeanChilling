@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <!-- Header Start -->
@@ -17,8 +18,8 @@
             <a href="#home" class="logo"><img src="img/logo.png"></a>
             <div class="links" id="nav">
                 <a href="#home" class="nav-btn">Home</a>
-                <a href="#menu">Menu</a>
                 <a href="#about">About</a>
+                <a href="#menu">Menu</a>
                 <a href="#team">Team</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -35,7 +36,7 @@
     <!-- Header End -->
 
     <!-- About Section Start -->
-    <section class="about" id="about">
+    <section class="about" id="about" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
         <h1 class="heading"> <span>about</span> us </h1>
         <div class="row">
             <div class="image">
@@ -56,15 +57,15 @@
     <!-- Menu Section Start -->
     <section class="menu" id="menu">
         <h1 class="heading">Our <span>Menu</span></h1>
-        <p class="heading-description">We deliver our products free (Only in Cavite) door to door 24/7</p>
-        <div class="container">
+        <p class="heading-description">We deliver our products free (Only in Tanza, Cavite) door to door</p>
+        <div class="container" data-aos="fade-left" data-aos-duration="1500" data-aos-once="true">
             <div class="menu-box">
                 <div class="menu-img">
                     <img src="img/menu-1.jpg">
                 </div>
                 <div class="menu-content">
                     <h3>Coffee Jelly</h3>
-                    <p>Product Description</p>
+                    <p>₱50.00</p>
                     <div class="btns">
                         <button class="menu-btn" onclick="addToCart(1)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
@@ -77,7 +78,7 @@
                 </div>
                 <div class="menu-content">
                     <h3>Iced Black Coffee</h3>
-                    <p>Product Description</p>
+                    <p>₱50.00</p>
                     <div class="btns">
                         <button class="menu-btn" onclick="addToCart(2)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
@@ -91,7 +92,7 @@
                 </div>
                 <div class="menu-content">
                     <h3 style="font-size: 22px;">Iced Caramel Macchiato</h3>
-                    <p>Product Description</p>
+                    <p>₱65.00</p>
                         <button class="menu-btn" onclick="addToCart(3)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
@@ -102,7 +103,7 @@
                 </div>
                 <div class="menu-content">
                     <h3>Iced Cappuccino</h3>
-                    <p>Product Description</p>
+                    <p>₱65.00</p>
                         <button class="menu-btn" onclick="addToCart(4)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
@@ -113,7 +114,7 @@
                 </div>
                 <div class="menu-content">
                     <h3>Iced Latte</h3>
-                    <p>Product Description</p>
+                    <p>₱65.00</p>
                         <button class="menu-btn" onclick="addToCart(5)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
@@ -124,7 +125,7 @@
                 </div>
                 <div class="menu-content">
                     <h3>Iced Mocha</h3>
-                    <p>Product Description</p>
+                    <p>₱75.00</p>
                         <button class="menu-btn" onclick="addToCart(6)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
@@ -135,7 +136,7 @@
                 </div>
                 <div class="menu-content">
                     <h3>Iced Coffee with Milk</h3>
-                    <p>Product Description</p>
+                    <p>₱55.00</p>
                         <button class="menu-btn" onclick="addToCart(7)">Add to cart</button>
                         <button class="menu-btn show-description-btn">View more</button>
                 </div>
@@ -161,7 +162,6 @@
                     <li>Gelatin: Our jelly cubes are made from high-quality gelatin, ensuring a smooth and bouncy texture.</li>
                     <li>Sweetener: A touch of sweetness is added to balance the robust flavor of coffee, enhancing the overall taste.</li>
                 </ul>
-                <p>Whether you're a coffee aficionado or simply looking to satisfy your sweet tooth, our Coffee Jelly is a must-try dessert that will awaken your senses and leave you wanting more. Join us and embark on a journey of flavors with this delightful creation that combines the best of coffee and dessert.</p>
                 <span class="price">₱50.00</span>
                 <button onclick="addToCart(1)">Buy now</button>
             </div>
@@ -183,7 +183,6 @@
                     <li>Filtered Water: Our Iced Black Coffee is brewed using pure, filtered water, allowing the true essence of the coffee beans to shine through.</li>
                     <li>Ice: To ensure a refreshing experience, our Iced Black Coffee is served over a generous amount of ice.</li>
                 </ul>
-                <p>Whether you're a coffee aficionado or simply looking to satisfy your sweet tooth, our Coffee Jelly is a must-try dessert that will awaken your senses and leave you wanting more. Join us and embark on a journey of flavors with this delightful creation that combines the best of coffee and dessert.</p>
                 <span class="price">₱50.00</span>
                 <button onclick="addToCart(2)">Buy now</button>
             </div>
@@ -205,7 +204,6 @@
                     <li>Cold Milk: Our baristas use cold milk to create a smooth and creamy texture, enhancing the overall richness of the beverage.</li>
                     <li>Caramel Syrup: A drizzle of luxurious caramel syrup is artfully added, imparting a delightful sweetness and an irresistible caramel undertone.</li>
                 </ul>
-                <p>Join us for an unforgettable coffee adventure with our Iced Caramel Macchiato. Its harmonious blend of espresso, milk, and caramel is a testament to the artistry of coffee making. Whether you're seeking a refreshing pick-me-up or a decadent treat, this beverage is sure to satisfy your cravings and provide a moment of pure indulgence.</p>
                 <span class="price">₱65.00</span>
                 <button onclick="addToCart(3)">Buy now</button>
             </div>
@@ -227,7 +225,6 @@
                     <li>Cold Milk: Our baristas use cold milk, steamed and frothed to achieve a smooth and creamy consistency that enhances the overall richness of the beverage.</li>
                     <li>Milk Foam: A crown of delicate milk foam is skillfully prepared and gently placed on top, lending an exquisite texture and aesthetic appeal.</li>
                 </ul>
-                <p>Join us and experience the artistry of our Iced Cappuccino. This cool and creamy beverage is a refreshing take on the beloved classic, designed to provide you with the perfect combination of bold espresso, velvety milk, and frothy foam. Whether you're seeking a morning pick-me-up or a satisfying treat throughout the day, our Iced Cappuccino is sure to satisfy your cravings and leave you feeling refreshed and invigorated.</p>
                 <span class="price">₱65.00</span>
                 <button onclick="addToCart(4)">Buy now</button>
             </div>
@@ -249,7 +246,6 @@
                     <li>Cold Milk: Our baristas incorporate cold milk into the Iced Latte, creating a creamy and smooth texture that complements the boldness of the espresso.</li>
                     <li>Ice: A generous serving of ice is added to the drink, instantly chilling the espresso and ensuring a refreshing experience.</li>
                 </ul>
-                <p>Our Iced Latte is the epitome of coffee elegance and refreshment. Its creamy texture, combined with the boldness of espresso and the coolness of ice, make it an ideal choice for coffee lovers seeking a delightful escape. Join us and savor the artistry of our Iced Latte, where every sip is a moment of pure coffee bliss.</p>
                 <span class="price">₱65.00</span>
                 <button onclick="addToCart(5)">Buy now</button>
             </div>
@@ -272,7 +268,6 @@
                     <li>Cold Milk: We incorporate cold milk into the beverage, creating a creamy and smooth texture that balances the boldness of the espresso and the richness of the chocolate.</li>
                     <li>Ice: A generous amount of ice is added to the drink, instantly cooling and preserving its refreshing nature.</li>
                 </ul>
-                <p>Our Iced Mocha is a captivating blend of coffee and chocolate, offering a refreshing and indulgent experience in every sip. Whether you're a coffee lover, a chocolate enthusiast, or simply seeking a delicious treat, our Iced Mocha is sure to delight your taste buds and provide a moment of pure satisfaction. Join us and embark on a journey of flavor with this irresistible beverage that combines the best of coffee and chocolate in a chilled delight.</p>
                 <span class="price">₱75.00</span>
                 <button onclick="addToCart(6)">Buy now</button>
             </div>
@@ -294,7 +289,6 @@
                     <li>Cold Milk: Our baristas incorporate cold milk into the beverage, creating a creamy and velvety texture that complements the boldness of the coffee. The milk adds a touch of sweetness and smoothness to each sip.</li>
                     <li>Ice: To ensure a cool and refreshing experience, our Iced Coffee with Milk is served over a generous amount of ice, instantly chilling the drink and maintaining its revitalizing qualities.</li>
                 </ul>
-                <p>Join us and discover the refreshing pleasure of our Iced Coffee with Milk. This cool and creamy beverage is the epitome of coffee enjoyment, combining the boldness of coffee with the smoothness of milk in a harmonious union. Whether you seek a morning pick-me-up or a rejuvenating treat throughout the day, our Iced Coffee with Milk is the perfect companion. Immerse yourself in the satisfying world of coffee and milk, and experience a moment of pure refreshment.</p>
                 <span class="price">₱55.00</span>
                 <button onclick="addToCart(7)">Buy now</button>
             </div>
@@ -325,43 +319,37 @@
         <div class="container">
             <div class="team-box">
                 <div class="team-img">
-                    <img src="img/pic-2.png" alt="">
+                    <img src="img/team-1.jpg" alt="">
                 </div>
                 <div class="team-content">
                     <h3>Content Manager</h3>
                     <p>Content Manager</p>
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
             <div class="team-box">
                 <div class="team-img">
-                    <img src="img/pic-3.png" alt="">
+                    <img src="img/team-2.jpg" alt="">
                 </div>
                 <div class="team-content">
                     <h3>Lead Developer</h3>
                     <p>Lead Developer</p>
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
             <div class="team-box">
                 <div class="team-img">
-                    <img src="img/pic-2.png" alt="">
+                    <img src="img/team-3.jpg" alt="">
                 </div>
                 <div class="team-content">
                     <h3>Market Manager</h3>
                     <p>Market Manager</p>
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -371,19 +359,19 @@
 
     <!-- Contact Section Start  -->
     <section class="contact" id="contact">
-        <h1 class="heading">contact</h1>
-        <div class="row">
+        <h1 class="heading"><span>Contact</span> Us</h1>
+        <div class="row" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
             <div class="ifarm">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3158.0889994053914!2d120.84100153937658!3d14.330591103438147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDE5JzUxLjUiTiAxMjDCsDUwJzMxLjkiRQ!5e0!3m2!1sen!2sph!4v1688494048948!5m2!1sen!2sph" width="550" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="form-c">
                 <form action="">
                     <h3>contact us</h3>
-                    <input type="text" placeholder="enter your name .....">
-                    <input type="email" placeholder="enter your email .....">
-                    <input type="number" placeholder="enter your phone .....">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <input type="submit" value="send messag">
+                    <input type="text" placeholder="enter your name ">
+                    <input type="email" placeholder="enter your email ">
+                    <input type="number" placeholder="enter your phone ">
+                    <textarea name="" id="" cols="60" rows="20"></textarea>
+                    <input type="submit" value="send message">
                 </form>
             </div>
         </div>
@@ -394,8 +382,6 @@
     <section class="footer">
         <div class="container">
             <div class="footer-box">
-                <h3>about us </h3>
-                <p>Short Description</p>
                 <p>&copy; 2023 Bean Chilling. All rights reserved.</p>
 
             </div>
@@ -422,6 +408,13 @@
     <!-- Footer Section End -->
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 10,
+        once: true,
+      });
+    </script>
 </body>
 
 </html>
